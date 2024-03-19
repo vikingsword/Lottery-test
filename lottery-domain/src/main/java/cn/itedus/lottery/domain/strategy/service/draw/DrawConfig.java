@@ -2,7 +2,7 @@ package cn.itedus.lottery.domain.strategy.service.draw;
 
 import cn.itedus.lottery.common.Constants;
 import cn.itedus.lottery.domain.strategy.service.algorithm.IDrawAlgorithm;
-import cn.itedus.lottery.domain.strategy.service.algorithm.impl.DefaultRateRandomDrawAlgorithm;
+import cn.itedus.lottery.domain.strategy.service.algorithm.impl.EntiretyRateRandomDrawAlgorithm;
 import cn.itedus.lottery.domain.strategy.service.algorithm.impl.SingleRateRandomDrawAlgorithm;
 
 import javax.annotation.PostConstruct;
@@ -18,17 +18,17 @@ import java.util.concurrent.ConcurrentHashMap;
 public class DrawConfig {
 
     @Resource
-    private DefaultRateRandomDrawAlgorithm defaultRateRandomDrawAlgorithm;
+    private EntiretyRateRandomDrawAlgorithm entiretyRateRandomDrawAlgorithm;
 
     @Resource
     private SingleRateRandomDrawAlgorithm singleRateRandomDrawAlgorithm;
 
-    protected static Map<Integer, IDrawAlgorithm> drawAlgorithmMap = new ConcurrentHashMap<>();
+    protected static Map<Integer, IDrawAlgorithm> drawAlgorithmGroup = new ConcurrentHashMap<>();
 
     @PostConstruct
     public void init() {
-        drawAlgorithmMap.put(Constants.StrategyMode.ENTIRETY.getCode(), defaultRateRandomDrawAlgorithm);
-        drawAlgorithmMap.put(Constants.StrategyMode.ENTIRETY.getCode(), singleRateRandomDrawAlgorithm);
+        drawAlgorithmGroup.put(Constants.StrategyMode.ENTIRETY.getCode(), entiretyRateRandomDrawAlgorithm);
+        drawAlgorithmGroup.put(Constants.StrategyMode.SINGLE.getCode(), singleRateRandomDrawAlgorithm);
     }
 
 }

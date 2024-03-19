@@ -3,11 +3,24 @@
 <mapper namespace="cn.itedus.lottery.infrastructure.dao.IStrategyDetailDao">
 
 
+    <update id="deductStock" parameterType="cn.itedus.lottery.infrastructure.po.StrategyDetail">
+        UPDATE `strategy_detail`
+        SET awardSurplusCount = awardSurplusCount - 1
+        WHERE strategyId = #{strategyId} AND awardId = #{awardId} AND awardSurplusCount > 0
+    </update>
+
+
     <select id="queryStrategyDetailList" parameterType="java.lang.Long" resultType="cn.itedus.lottery.infrastructure.po.StrategyDetail">
         SELECT
             id, strategyId, awardId, awardCount, awardRate, createTime, updateTime
         FROM `strategy_detail`
         WHERE strategyId = #{strategyId}
+    </select>
+
+    <select id="queryNoStockStrategyAwardList" resultType="java.lang.String">
+        SELECT awardId
+        FROM `strategy_detail`
+        WHERE strategyId = #{strategyId} AND awardSurplusCount = 0
     </select>
 
 </mapper>
