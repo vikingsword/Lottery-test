@@ -25,6 +25,10 @@ public class Result implements Serializable {
         return new Result(Constants.ResponseCode.SUCCESS.getCode(), Constants.ResponseCode.SUCCESS.getInfo());
     }
 
+    public static Result buildSuccessResult(String info) {
+        return new Result(Constants.ResponseCode.SUCCESS.getCode(), info);
+    }
+
     public static Result buildErrorResult() {
         return new Result(Constants.ResponseCode.UN_ERROR.getCode(), Constants.ResponseCode.UN_ERROR.getInfo());
     }

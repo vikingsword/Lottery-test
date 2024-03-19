@@ -1,4 +1,4 @@
-package cn.itedus.lottery.domain.award.repo.impl;
+package cn.itedus.lottery.infrastructure.repo;
 
 import cn.itedus.lottery.domain.award.repo.IAwardRepository;
 import org.springframework.stereotype.Repository;

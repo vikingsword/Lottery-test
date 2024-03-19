@@ -1,18 +1,13 @@
-package cn.itedus.lottery.infrastructure.po;
+package cn.itedus.lottery.domain.activity.model.vo;
 
 import java.util.Date;
 
 /**
  * @author vikingar
- * @time 2024/3/1 13:45
+ * @time 2024/3/5 12:39
  * @description
  */
-public class Activity {
-
-    /**
-     * 自增ID
-     */
-    private Long id;
+public class ActivityVO {
 
     /**
      * 活动ID
@@ -58,24 +53,6 @@ public class Activity {
      * 创建人
      */
     private String creator;
-
-    /**
-     * 创建时间
-     */
-    private Date createTime;
-
-    /**
-     * 修改时间
-     */
-    private Date updateTime;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public Long getActivityId() {
         return activityId;
@@ -149,19 +126,19 @@ public class Activity {
         this.creator = creator;
     }
 
-    public Date getCreateTime() {
-        return createTime;
+    @Override
+    public String toString() {
+        return "ActivityVO{" +
+                "activityId=" + activityId +
+                ", activityName='" + activityName + '\'' +
+                ", activityDesc='" + activityDesc + '\'' +
+                ", beginDateTime=" + beginDateTime +
+                ", endDateTime=" + endDateTime +
+                ", stockCount=" + stockCount +
+                ", takeCount=" + takeCount +
+                ", state=" + state +
+                ", creator='" + creator + '\'' +
+                '}';
     }
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Date getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
-    }
 }
