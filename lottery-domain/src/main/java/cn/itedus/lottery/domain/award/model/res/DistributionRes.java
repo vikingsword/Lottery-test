@@ -21,6 +21,12 @@ public class DistributionRes {
     public DistributionRes() {
     }
 
+    public DistributionRes(String uId, Integer code, String info) {
+        this.uId = uId;
+        this.code = code;
+        this.info = info;
+    }
+
     public DistributionRes(String uId, Integer code, String info, String statementId) {
         this.uId = uId;
         this.code = code;
