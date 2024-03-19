@@ -1,4 +1,4 @@
-package cn.itedus.lottery.domain.strategy.repo.impl;
+package cn.itedus.lottery.infrastructure.repo;
 
 import cn.itedus.lottery.domain.strategy.model.aggregrates.StrategyRich;
 import cn.itedus.lottery.domain.strategy.repo.IStrategyRepository;
