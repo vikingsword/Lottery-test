@@ -1,5 +1,6 @@
 package cn.itedus.lottery.domain.strategy.service.draw;
 
+import cn.itedus.lottery.common.Constants;
 import cn.itedus.lottery.domain.strategy.service.algorithm.IDrawAlgorithm;
 import cn.itedus.lottery.domain.strategy.service.algorithm.impl.DefaultRateRandomDrawAlgorithm;
 import cn.itedus.lottery.domain.strategy.service.algorithm.impl.SingleRateRandomDrawAlgorithm;
@@ -26,8 +27,8 @@ public class DrawConfig {
 
     @PostConstruct
     public void init() {
-        drawAlgorithmMap.put(1, defaultRateRandomDrawAlgorithm);
-        drawAlgorithmMap.put(2, singleRateRandomDrawAlgorithm);
+        drawAlgorithmMap.put(Constants.StrategyMode.ENTIRETY.getCode(), defaultRateRandomDrawAlgorithm);
+        drawAlgorithmMap.put(Constants.StrategyMode.ENTIRETY.getCode(), singleRateRandomDrawAlgorithm);
     }
 
 }
