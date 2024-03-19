@@ -1,8 +1,8 @@
-package cn.itedus.lottery.domain.strategy.services.draw;
+package cn.itedus.lottery.domain.strategy.service.draw;
 
-import cn.itedus.lottery.domain.strategy.services.algorithm.IDrawAlgorithm;
-import cn.itedus.lottery.domain.strategy.services.algorithm.impl.DefaultRateRandomDrawAlgorithm;
-import cn.itedus.lottery.domain.strategy.services.algorithm.impl.SingleRateRandomDrawAlgorithm;
+import cn.itedus.lottery.domain.strategy.service.algorithm.IDrawAlgorithm;
+import cn.itedus.lottery.domain.strategy.service.algorithm.impl.DefaultRateRandomDrawAlgorithm;
+import cn.itedus.lottery.domain.strategy.service.algorithm.impl.SingleRateRandomDrawAlgorithm;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;

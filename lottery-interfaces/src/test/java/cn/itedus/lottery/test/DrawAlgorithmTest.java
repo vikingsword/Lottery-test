@@ -1,7 +1,7 @@
 package cn.itedus.lottery.test;
 
 import cn.itedus.lottery.domain.strategy.model.vo.AwardRateInfo;
-import cn.itedus.lottery.domain.strategy.services.algorithm.IDrawAlgorithm;
+import cn.itedus.lottery.domain.strategy.service.algorithm.IDrawAlgorithm;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

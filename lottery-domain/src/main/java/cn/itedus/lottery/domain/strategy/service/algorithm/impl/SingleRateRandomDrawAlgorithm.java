@@ -1,6 +1,6 @@
-package cn.itedus.lottery.domain.strategy.services.algorithm.impl;
+package cn.itedus.lottery.domain.strategy.service.algorithm.impl;
 
-import cn.itedus.lottery.domain.strategy.services.algorithm.BaseAlgorithm;
+import cn.itedus.lottery.domain.strategy.service.algorithm.BaseAlgorithm;
 import org.springframework.stereotype.Component;
 
 import java.security.SecureRandom;

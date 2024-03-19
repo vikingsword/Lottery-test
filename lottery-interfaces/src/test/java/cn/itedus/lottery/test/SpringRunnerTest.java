@@ -1,7 +1,7 @@
 package cn.itedus.lottery.test;
 
 import cn.itedus.lottery.domain.strategy.model.req.DrawReq;
-import cn.itedus.lottery.domain.strategy.services.draw.IDrawExec;
+import cn.itedus.lottery.domain.strategy.service.draw.IDrawExec;
 import cn.itedus.lottery.infrastructure.dao.IActivityDao;
 import cn.itedus.lottery.infrastructure.po.Activity;
 import com.alibaba.fastjson.JSON;

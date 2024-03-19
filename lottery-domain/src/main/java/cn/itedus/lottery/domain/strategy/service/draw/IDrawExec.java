@@ -1,4 +1,4 @@
-package cn.itedus.lottery.domain.strategy.services.draw;
+package cn.itedus.lottery.domain.strategy.service.draw;
 
 import cn.itedus.lottery.domain.strategy.model.req.DrawReq;
 import cn.itedus.lottery.domain.strategy.model.res.DrawResult;

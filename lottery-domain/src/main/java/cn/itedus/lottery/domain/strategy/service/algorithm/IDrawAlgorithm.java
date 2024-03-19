@@ -1,4 +1,4 @@
-package cn.itedus.lottery.domain.strategy.services.algorithm;
+package cn.itedus.lottery.domain.strategy.service.algorithm;
 
 import cn.itedus.lottery.domain.strategy.model.vo.AwardRateInfo;
 

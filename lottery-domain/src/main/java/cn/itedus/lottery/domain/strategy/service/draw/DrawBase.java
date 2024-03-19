@@ -1,7 +1,7 @@
-package cn.itedus.lottery.domain.strategy.services.draw;
+package cn.itedus.lottery.domain.strategy.service.draw;
 
 import cn.itedus.lottery.domain.strategy.model.vo.AwardRateInfo;
-import cn.itedus.lottery.domain.strategy.services.algorithm.IDrawAlgorithm;
+import cn.itedus.lottery.domain.strategy.service.algorithm.IDrawAlgorithm;
 import cn.itedus.lottery.infrastructure.po.StrategyDetail;
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package cn.itedus.lottery.domain.strategy.services.algorithm;
+package cn.itedus.lottery.domain.strategy.service.algorithm;
 
 import cn.itedus.lottery.domain.strategy.model.vo.AwardRateInfo;
 
@@ -37,14 +37,16 @@ public abstract class BaseAlgorithm implements IDrawAlgorithm {
         for (AwardRateInfo awardRateInfo : awardRateInfoList) {
             int rateVal = awardRateInfo.getAwardRate().multiply(new BigDecimal(100)).intValue();
 
-            for (int i = 1; i <= (cursorVal + rateVal); i++) {
+            // 循环填充概率范围值
+            for (int i = cursorVal + 1; i <= (rateVal + cursorVal); i++) {
                 rateTuple[hashIdx(i)] = awardRateInfo.getAwardId();
             }
 
             cursorVal += rateVal;
-        }
 
+        }
     }
+
 
     @Override
     public boolean isExistRateTuple(Long strategyId) {
@@ -61,4 +63,5 @@ public abstract class BaseAlgorithm implements IDrawAlgorithm {
         int hashCode = val * HASH_INCREMENT + HASH_INCREMENT;
         return hashCode & (RATE_TUPLE_LENGTH - 1);
     }
+
 }
