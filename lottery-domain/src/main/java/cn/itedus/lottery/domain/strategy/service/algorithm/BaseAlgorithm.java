@@ -37,7 +37,7 @@ public abstract class BaseAlgorithm implements IDrawAlgorithm {
         for (AwardRateInfo awardRateInfo : awardRateInfoList) {
             int rateVal = awardRateInfo.getAwardRate().multiply(new BigDecimal(100)).intValue();
 
-            // 循环填充概率范围值
+            // 循环填充概率范围值 error: 是 cursorVal + 1 而不是 1
             for (int i = cursorVal + 1; i <= (rateVal + cursorVal); i++) {
                 rateTuple[hashIdx(i)] = awardRateInfo.getAwardId();
             }
