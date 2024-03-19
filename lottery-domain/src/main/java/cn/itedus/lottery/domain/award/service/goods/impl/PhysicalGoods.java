@@ -1,7 +1,7 @@
 package cn.itedus.lottery.domain.award.service.goods.impl;
 
 import cn.itedus.lottery.common.Constants;
-import cn.itedus.lottery.domain.award.model.req.GoodReq;
+import cn.itedus.lottery.domain.award.model.req.GoodsReq;
 import cn.itedus.lottery.domain.award.model.res.DistributionRes;
 import cn.itedus.lottery.domain.award.service.goods.DistributionBase;
 import cn.itedus.lottery.domain.award.service.goods.IDistributionGoods;
@@ -21,7 +21,7 @@ public class PhysicalGoods extends DistributionBase implements IDistributionGood
     private Logger logger = LoggerFactory.getLogger(PhysicalGoods.class);
 
     @Override
-    public DistributionRes doDistribution(GoodReq req) {
+    public DistributionRes doDistribution(GoodsReq req) {
 
         logger.info("模拟调用优惠券发放接口 uId：{} awardContent：{}", req.getuId(), req.getAwardContent());
 
