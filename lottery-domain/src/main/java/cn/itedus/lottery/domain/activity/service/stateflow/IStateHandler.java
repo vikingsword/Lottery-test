@@ -3,11 +3,6 @@ package cn.itedus.lottery.domain.activity.service.stateflow;
 import cn.itedus.lottery.common.Constants;
 import cn.itedus.lottery.common.Result;
 
-/**
- * @author vikingar
- * @time 2024/3/19 23:30
- * @description
- */
 public interface IStateHandler {
 
     /**

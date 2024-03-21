@@ -7,11 +7,12 @@ import org.springframework.stereotype.Component;
 
 /**
  * @author vikingar
- * @time 2024/3/19 23:30
+ * @time 2024/3/5 18:03
  * @description
  */
 @Component
 public class PassState extends AbstractState {
+
     @Override
     public Result arraignment(Long activityId, Enum<Constants.ActivityState> currentState) {
         return Result.buildResult(Constants.ResponseCode.UN_ERROR, "已审核状态不可重复提审");
@@ -49,4 +50,6 @@ public class PassState extends AbstractState {
         boolean isSuccess = activityRepository.alterStatus(activityId, currentState, Constants.ActivityState.DOING);
         return isSuccess ? Result.buildResult(Constants.ResponseCode.SUCCESS, "活动变更活动中完成") : Result.buildErrorResult("活动状态变更失败");
     }
+
 }
+

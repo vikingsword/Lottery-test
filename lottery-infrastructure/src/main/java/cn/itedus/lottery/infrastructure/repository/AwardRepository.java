@@ -1,15 +1,14 @@
-package cn.itedus.lottery.infrastructure.repo;
+package cn.itedus.lottery.infrastructure.repository;
 
 import cn.itedus.lottery.domain.award.repo.IAwardRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Component;
 
 /**
  * @author vikingar
- * @time 2024/3/19 12:25
+ * @time 2024/3/3 22:42
  * @description
  */
-@Repository
+@Component
 public class AwardRepository implements IAwardRepository {
-
 
 }

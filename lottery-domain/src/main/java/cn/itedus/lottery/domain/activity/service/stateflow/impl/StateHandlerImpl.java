@@ -8,11 +8,12 @@ import org.springframework.stereotype.Service;
 
 /**
  * @author vikingar
- * @time 2024/3/20 0:11
+ * @time 2024/3/5 18:25
  * @description
  */
 @Service
 public class StateHandlerImpl extends StateConfig implements IStateHandler {
+
     @Override
     public Result arraignment(Long activityId, Enum<Constants.ActivityState> currentStatus) {
         return stateGroup.get(currentStatus).arraignment(activityId, currentStatus);
@@ -47,4 +48,5 @@ public class StateHandlerImpl extends StateConfig implements IStateHandler {
     public Result doing(Long activityId, Enum<Constants.ActivityState> currentStatus) {
         return stateGroup.get(currentStatus).doing(activityId, currentStatus);
     }
+
 }

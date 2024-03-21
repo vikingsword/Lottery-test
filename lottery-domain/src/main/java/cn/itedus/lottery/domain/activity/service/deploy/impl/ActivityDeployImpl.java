@@ -1,8 +1,11 @@
-package cn.itedus.lottery.domain.activity.model.req.impl;
+package cn.itedus.lottery.domain.activity.service.deploy.impl;
 
 import cn.itedus.lottery.domain.activity.model.aggregates.ActivityConfigRich;
 import cn.itedus.lottery.domain.activity.model.req.ActivityConfigReq;
 import cn.itedus.lottery.domain.activity.model.vo.ActivityVO;
+import cn.itedus.lottery.domain.activity.model.vo.AwardVO;
+import cn.itedus.lottery.domain.activity.model.vo.StrategyDetailVO;
+import cn.itedus.lottery.domain.activity.model.vo.StrategyVO;
 import cn.itedus.lottery.domain.activity.repo.IActivityRepository;
 import cn.itedus.lottery.domain.activity.service.deploy.IActivityDeploy;
 import com.alibaba.fastjson.JSON;
@@ -13,10 +16,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @author vikingar
- * @time 2024/3/20 0:19
+ * @time 2024/3/5 17:52
  * @description
  */
 @Service
@@ -32,26 +36,28 @@ public class ActivityDeployImpl implements IActivityDeploy {
     public void createActivity(ActivityConfigReq req) {
         logger.info("创建活动配置开始，activityId：{}", req.getActivityId());
         ActivityConfigRich activityConfigRich = req.getActivityConfigRich();
-
         try {
             // 添加活动配置
             ActivityVO activity = activityConfigRich.getActivity();
             activityRepository.addActivity(activity);
 
-            // 添加奖品撇脂
+            // 添加奖品配置
+            List<AwardVO> awardList = activityConfigRich.getAwardList();
+            activityRepository.addAward(awardList);
 
             // 添加策略配置
+            StrategyVO strategy = activityConfigRich.getStrategy();
+            activityRepository.addStrategy(strategy);
 
             // 添加策略明细配置
+            List<StrategyDetailVO> strategyDetailList = activityConfigRich.getStrategy().getStrategyDetailList();
+            activityRepository.addStrategyDetailList(strategyDetailList);
 
-            logger.info("");
+            logger.info("创建活动配置完成，activityId：{}", req.getActivityId());
         } catch (DuplicateKeyException e) {
             logger.error("创建活动配置失败，唯一索引冲突 activityId：{} reqJson：{}", req.getActivityId(), JSON.toJSONString(req), e);
             throw e;
         }
-
-
-
     }
 
     @Override

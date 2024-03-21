@@ -10,29 +10,23 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author vikingar
- * @time 2024/3/19 23:31
+ * @time 2024/3/5 17:56
  * @description
  */
 public class StateConfig {
 
     @Resource
     private ArraignmentState arraignmentState;
-
     @Resource
     private CloseState closeState;
-
     @Resource
     private DoingState doingState;
-
     @Resource
     private EditingState editingState;
-
     @Resource
     private OpenState openState;
-
     @Resource
     private PassState passState;
-
     @Resource
     private RefuseState refuseState;
 
@@ -47,6 +41,6 @@ public class StateConfig {
         stateGroup.put(Constants.ActivityState.OPEN, openState);
         stateGroup.put(Constants.ActivityState.PASS, passState);
         stateGroup.put(Constants.ActivityState.REFUSE, refuseState);
-
     }
+
 }

@@ -7,11 +7,12 @@ import org.springframework.stereotype.Component;
 
 /**
  * @author vikingar
- * @time 2024/3/19 23:29
+ * @time 2024/3/5 18:03
  * @description
  */
 @Component
 public class EditingState extends AbstractState {
+
     @Override
     public Result arraignment(Long activityId, Enum<Constants.ActivityState> currentState) {
         boolean isSuccess = activityRepository.alterStatus(activityId, currentState, Constants.ActivityState.ARRAIGNMENT);
@@ -48,4 +49,6 @@ public class EditingState extends AbstractState {
     public Result doing(Long activityId, Enum<Constants.ActivityState> currentState) {
         return Result.buildResult(Constants.ResponseCode.UN_ERROR, "编辑中活动不可执行活动中变更");
     }
+
 }
+

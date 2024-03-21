@@ -5,23 +5,28 @@ import cn.itedus.lottery.domain.strategy.model.vo.DrawAwardInfo;
 
 /**
  * @author vikingar
- * @time 2024/3/16 22:17
+ * @time 2024/3/2 12:39
  * @description
  */
 public class DrawResult {
-
-    // 用户ID
+    /**
+     * 用户ID
+     */
     private String uId;
 
-    // 策略ID
+    /**
+     * 策略ID
+     */
     private Long strategyId;
 
     /**
-     * 中奖状态
+     * 中奖状态：0未中奖、1已中奖、2兜底奖 Constants.DrawState
      */
     private Integer drawState = Constants.DrawState.FAIL.getCode();
 
-    // 奖品名称
+    /**
+     * 中奖奖品信息
+     */
     private DrawAwardInfo drawAwardInfo;
 
     public DrawResult() {

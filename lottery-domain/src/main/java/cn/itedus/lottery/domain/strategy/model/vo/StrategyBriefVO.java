@@ -1,18 +1,8 @@
-package cn.itedus.lottery.infrastructure.po;
+package cn.itedus.lottery.domain.strategy.model.vo;
 
 import java.util.Date;
 
-/**
- * @author vikingar
- * @time 2024/3/1 23:28
- * @description
- */
-public class Strategy {
-
-    /**
-     * 自增ID
-     */
-    private Long id;
+public class StrategyBriefVO {
 
     /**
      * 策略ID
@@ -43,24 +33,6 @@ public class Strategy {
      * 扩展信息
      */
     private String extInfo;
-
-    /**
-     * 创建时间
-     */
-    private Date createTime;
-
-    /**
-     * 修改时间
-     */
-    private Date updateTime;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public Long getStrategyId() {
         return strategyId;
@@ -108,21 +80,5 @@ public class Strategy {
 
     public void setExtInfo(String extInfo) {
         this.extInfo = extInfo;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Date getUpdateTime() {
-        return updateTime;
-    }
-
-    public void setUpdateTime(Date updateTime) {
-        this.updateTime = updateTime;
     }
 }

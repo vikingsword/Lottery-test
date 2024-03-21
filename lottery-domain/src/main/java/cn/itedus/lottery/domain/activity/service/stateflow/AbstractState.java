@@ -8,7 +8,7 @@ import javax.annotation.Resource;
 
 /**
  * @author vikingar
- * @time 2024/3/19 23:34
+ * @time 2024/3/5 17:54
  * @description
  */
 public abstract class AbstractState {
@@ -78,9 +78,5 @@ public abstract class AbstractState {
      * @return 执行结果
      */
     public abstract Result doing(Long activityId, Enum<Constants.ActivityState> currentState);
-
-
-
-
 
 }

@@ -7,11 +7,12 @@ import org.springframework.stereotype.Component;
 
 /**
  * @author vikingar
- * @time 2024/3/19 23:29
+ * @time 2024/3/5 18:03
  * @description
  */
 @Component
 public class CloseState extends AbstractState {
+
     @Override
     public Result arraignment(Long activityId, Enum<Constants.ActivityState> currentState) {
         return Result.buildResult(Constants.ResponseCode.UN_ERROR, "活动关闭不可提审");
@@ -47,4 +48,6 @@ public class CloseState extends AbstractState {
     public Result doing(Long activityId, Enum<Constants.ActivityState> currentState) {
         return Result.buildResult(Constants.ResponseCode.UN_ERROR, "活动关闭不可变更活动中");
     }
+
 }
+

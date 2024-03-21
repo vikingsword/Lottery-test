@@ -4,8 +4,8 @@ import java.math.BigDecimal;
 
 /**
  * @author vikingar
- * @time 2024/3/16 22:17
- * @description
+ * @time 2024/3/2 0:07
+ * @description 奖品概率信息，奖品编号、库存、概率
  */
 public class AwardRateInfo {
 
@@ -17,6 +17,7 @@ public class AwardRateInfo {
         this.awardId = awardId;
         this.awardRate = awardRate;
     }
+
 
     public String getAwardId() {
         return awardId;
@@ -33,6 +34,4 @@ public class AwardRateInfo {
     public void setAwardRate(BigDecimal awardRate) {
         this.awardRate = awardRate;
     }
-
-
 }

@@ -2,8 +2,6 @@ package cn.itedus.lottery.domain.strategy.service.draw;
 
 import cn.itedus.lottery.common.Constants;
 import cn.itedus.lottery.domain.strategy.service.algorithm.IDrawAlgorithm;
-import cn.itedus.lottery.domain.strategy.service.algorithm.impl.EntiretyRateRandomDrawAlgorithm;
-import cn.itedus.lottery.domain.strategy.service.algorithm.impl.SingleRateRandomDrawAlgorithm;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
@@ -12,17 +10,18 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author vikingar
- * @time 2024/3/16 23:41
+ * @time 2024/3/2 13:12
  * @description
  */
 public class DrawConfig {
 
     @Resource
-    private EntiretyRateRandomDrawAlgorithm entiretyRateRandomDrawAlgorithm;
+    private IDrawAlgorithm entiretyRateRandomDrawAlgorithm;
 
     @Resource
-    private SingleRateRandomDrawAlgorithm singleRateRandomDrawAlgorithm;
+    private IDrawAlgorithm singleRateRandomDrawAlgorithm;
 
+    /** 抽奖策略组 */
     protected static Map<Integer, IDrawAlgorithm> drawAlgorithmGroup = new ConcurrentHashMap<>();
 
     @PostConstruct

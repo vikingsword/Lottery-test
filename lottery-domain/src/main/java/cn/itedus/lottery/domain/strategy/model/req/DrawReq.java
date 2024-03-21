@@ -2,13 +2,14 @@ package cn.itedus.lottery.domain.strategy.model.req;
 
 /**
  * @author vikingar
- * @time 2024/3/16 22:17
+ * @time 2024/3/2 12:40
  * @description
  */
 public class DrawReq {
-
+    // 用户ID
     private String uId;
 
+    // 策略ID
     private Long strategyId;
 
     public DrawReq() {

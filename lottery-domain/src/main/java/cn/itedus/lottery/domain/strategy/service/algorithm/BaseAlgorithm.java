@@ -10,21 +10,21 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author vikingar
- * @time 2024/3/16 22:33
+ * @time 2024/3/2 0:15
  * @description
  */
 public abstract class BaseAlgorithm implements IDrawAlgorithm {
 
-    // 斐波那契散列增量，逻辑：黄金分割点：(√5 - 1) / 2 = 0.6180339887，Math.pow(2, 32) * 0.6180339887 = 0x61c88647
+    /** 斐波那契散列增量，逻辑：黄金分割点：(√5 - 1) / 2 = 0.6180339887，Math.pow(2, 32) * 0.6180339887 = 0x61c88647 */
     private final int HASH_INCREMENT = 0x61c88647;
 
-    // 数组初始化长度
+    /** 数组初始化长度 128，保证数据填充时不发生碰撞的最小初始化值 */
     private final int RATE_TUPLE_LENGTH = 128;
 
-    // 存放概率与奖品对应的散列结果，strategyId -> rateTuple
+    /** 存放概率与奖品对应的散列结果，strategyId -> rateTuple */
     protected Map<Long, String[]> rateTupleMap = new ConcurrentHashMap<>();
 
-    // 奖品区间概率值，strategyId -> [awardId->begin、awardId->end]
+    /** 奖品区间概率值，strategyId -> [awardId->begin、awardId->end] */
     protected Map<Long, List<AwardRateInfo>> awardRateInfoMap = new ConcurrentHashMap<>();
 
     @Override
@@ -38,7 +38,7 @@ public abstract class BaseAlgorithm implements IDrawAlgorithm {
         for (AwardRateInfo awardRateInfo : awardRateInfoList) {
             int rateVal = awardRateInfo.getAwardRate().multiply(new BigDecimal(100)).intValue();
 
-            // 循环填充概率范围值 error: 是 cursorVal + 1 而不是 1
+            // 循环填充概率范围值
             for (int i = cursorVal + 1; i <= (rateVal + cursorVal); i++) {
                 rateTuple[hashIdx(i)] = awardRateInfo.getAwardId();
             }
@@ -47,7 +47,6 @@ public abstract class BaseAlgorithm implements IDrawAlgorithm {
 
         }
     }
-
 
     @Override
     public boolean isExistRateTuple(Long strategyId) {

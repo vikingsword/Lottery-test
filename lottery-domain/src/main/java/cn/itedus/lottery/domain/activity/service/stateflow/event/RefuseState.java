@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * @author vikingar
- * @time 2024/3/19 23:30
+ * @time 2024/3/5 18:03
  * @description
  */
 @Component
@@ -49,4 +49,6 @@ public class RefuseState extends AbstractState {
     public Result doing(Long activityId, Enum<Constants.ActivityState> currentState) {
         return Result.buildResult(Constants.ResponseCode.UN_ERROR, "审核拒绝不可执行活动为进行中");
     }
+
 }
+
